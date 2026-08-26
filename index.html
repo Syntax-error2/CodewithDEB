@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Security Measures -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self' data: https://scontent.fceb6-4.fna.fbcdn.net; connect-src 'self';">
+    <title>CodewithDEB | John Dave Hermoso</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://scontent.fceb6-4.fna.fbcdn.net/v/t39.30808-6/755694460_2635765340215505_6926355572037442602_n.jpg?stp=dst-jpg_tt6&cstp=mx1698x926&ctp=s1698x926&_nc_cat=111&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeFybjo-eP2anIMgwH7NcDgmbjw48Hj9JsduPDjweP0mxw5iwTng00NkQupRv9jtP6LPkFgdrFGb6t4IzXNdn7zz&_nc_ohc=Y1Xd9UhYgQIQ7kNvwGQ0Rib&_nc_oc=Adq9acffpiAYakysmL85QTWZI0z7Y64DFJSr4AZ-1dZfe5chv75V9S_PPf-LiLMTRxJevsBucs9hoNVjyjtNqnh8&_nc_zt=23&_nc_ht=scontent.fceb6-4.fna&_nc_gid=AqSvOb85pO2zyWrxeRqMhA&_nc_ss=7b2a8&oh=00_AQF99ZMLJT7T-7i8vAvS_c4GObYfEMCnEdZeHedLKB53MQ&oe=6A94DC1E" type="image/jpeg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Devicons -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    
+    <link rel="stylesheet" href="index.css">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+</head>
+<body class="dark-theme">
+
+    <!-- Premium Fluid Mesh Background with a "Twist" -->
+    <div class="mesh-bg" aria-hidden="true">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <nav class="navbar">
+        <div class="logo pixel-font">CodewithDEB.</div>
+        <div class="nav-links mono-font">
+            <a href="#about" class="nav-item">About</a>
+            <a href="#experience" class="nav-item">Experience</a>
+            <a href="#projects" class="nav-item">Systems</a>
+            <a href="mailto:davehermoso01@gmail.com" class="nav-item cta-btn">Let's Talk</a>
+        </div>
+    </nav>
+
+    <main data-scroll-container>
+        
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-wrapper container">
+                <div class="hero-image-box tilt-card">
+                    <img src="profile.jpg" alt="John Dave Hermoso" class="hero-img">
+                </div>
+                <div class="hero-text">
+                    <span class="hero-im mono-font reveal-fade">I'm</span>
+                    <h1 class="hero-title pixel-font">
+                        <span id="typewriter"></span><span class="cursor-blink">|</span>
+                    </h1>
+                    <h2 class="hero-subtitle mono-font reveal-fade">Systems Developer Lead</h2>
+                    <div class="hero-badges mono-font reveal-fade">
+                        <span class="badge">CODEWITHDEB</span>
+                        <span class="badge">FULL-STACK ENGINEER</span>
+                        <span class="badge">UI/UX OPTIMIZATION</span>
+                        <span class="badge">BINALBAGAN, PH</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <p class="about-lead pixel-font">
+                    I'm a full-stack engineer who builds fast, scalable, and intuitive digital experiences. I specialize in turning complex problems into elegant systems that people actually enjoy using. Whether it's optimizing databases or crafting seamless frontends, I focus on delivering real value through clean code.
+                </p>
+            </div>
+        </section>
+
+        <!-- Tech Stack Carousel -->
+        <section class="stack">
+            <div class="marquee-wrapper">
+                <div class="marquee">
+                    <!-- Original Set -->
+                    <div class="stack-item"><i class="devicon-javascript-plain"></i> JavaScript</div>
+                    <div class="stack-item"><i class="devicon-react-original"></i> React</div>
+                    <div class="stack-item"><i class="devicon-nextjs-plain"></i> Next.js</div>
+                    <div class="stack-item"><i class="devicon-python-plain"></i> Python</div>
+                    <div class="stack-item"><i class="devicon-php-plain"></i> PHP</div>
+                    <div class="stack-item"><i class="devicon-kotlin-plain"></i> Kotlin</div>
+                    <div class="stack-item"><i class="devicon-laravel-plain"></i> Laravel</div>
+                    <div class="stack-item"><i class="devicon-html5-plain"></i> HTML5</div>
+                    <div class="stack-item"><i class="devicon-css3-plain"></i> CSS3</div>
+                    <div class="stack-item"><i class="devicon-bootstrap-plain"></i> Bootstrap</div>
+                    <div class="stack-item"><i class="devicon-android-plain"></i> Android Studio</div>
+                    <div class="stack-item"><i class="devicon-mysql-plain"></i> MySQL</div>
+                    <div class="stack-item"><i class="devicon-postgresql-plain"></i> PostgreSQL</div>
+                    <div class="stack-item"><i class="devicon-supabase-plain"></i> Supabase</div>
+                    
+                    <!-- Duplicated Set -->
+                    <div class="stack-item"><i class="devicon-javascript-plain"></i> JavaScript</div>
+                    <div class="stack-item"><i class="devicon-react-original"></i> React</div>
+                    <div class="stack-item"><i class="devicon-nextjs-plain"></i> Next.js</div>
+                    <div class="stack-item"><i class="devicon-python-plain"></i> Python</div>
+                    <div class="stack-item"><i class="devicon-php-plain"></i> PHP</div>
+                    <div class="stack-item"><i class="devicon-kotlin-plain"></i> Kotlin</div>
+                    <div class="stack-item"><i class="devicon-laravel-plain"></i> Laravel</div>
+                    <div class="stack-item"><i class="devicon-html5-plain"></i> HTML5</div>
+                    <div class="stack-item"><i class="devicon-css3-plain"></i> CSS3</div>
+                    <div class="stack-item"><i class="devicon-bootstrap-plain"></i> Bootstrap</div>
+                    <div class="stack-item"><i class="devicon-android-plain"></i> Android Studio</div>
+                    <div class="stack-item"><i class="devicon-mysql-plain"></i> MySQL</div>
+                    <div class="stack-item"><i class="devicon-postgresql-plain"></i> PostgreSQL</div>
+                    <div class="stack-item"><i class="devicon-supabase-plain"></i> Supabase</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="experience" id="experience">
+            <div class="container">
+                <h3 class="section-title mono-font">/// EXPERIENCE</h3>
+                
+                <div class="exp-block">
+                    <div class="exp-meta mono-font">Jan 2026 — Present</div>
+                    <div class="exp-content">
+                        <h4 class="pixel-font exp-role">Systems Developer Lead</h4>
+                        <span class="exp-company mono-font">Aqura Information Technology Solutions</span>
+                        <p class="exp-desc">
+                            Spearheaded development of enterprise/government solutions including the Municipality of Binalbagan HRIS, Hinobaan HRIS, and BWD_HRIS. Engineered digital platforms for public service: DisasterLink, BarangayLink, and Leanly. Designed and implemented a Smart Queueing System to optimize client flow, and now deploying the biometric system for DTR. Architected scalable, secure full-stack structures across multiple concurrent projects.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="exp-block">
+                    <div class="exp-meta mono-font">Jan 2026 — May 2026</div>
+                    <div class="exp-content">
+                        <h4 class="pixel-font exp-role">Full Stack Engineer</h4>
+                        <span class="exp-company mono-font">Freelance</span>
+                        <p class="exp-desc">
+                            Developed and launched ELECDRAFT PRO, a specialized electrical CAD and load schedule automation software to streamline complex workflows. Engineered the robust full-stack system from scratch utilizing Python, PyCharm, ODA, and Bootstrap. Automated manual calculation processes and data entry, significantly reducing design time.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deployed Systems & Projects -->
+        <section class="projects" id="projects">
+            <div class="projects-header container">
+                <h3 class="section-title mono-font">/// DEPLOYED SYSTEMS & PROJECTS</h3>
+            </div>
+            
+            <div class="horizontal-scroll-container">
+                
+                <a href="https://github.com/Syntax-error2/ELECDRAFT" target="_blank" class="project-card tilt-card">
+                    <div class="project-num mono-font">01</div>
+                    <h4 class="pixel-font">ELECDRAFT PRO</h4>
+                    <p class="project-type mono-font">Electrical CAD Software</p>
+                    <p class="project-info">Specialized CAD and load schedule automation software for electrical engineers.</p>
+                    <div class="project-tech"><i class="devicon-python-plain"></i> <i class="devicon-bootstrap-plain"></i></div>
+                </a>
+
+                <a href="https://github.com/Syntax-error2/BarangayLink" target="_blank" class="project-card tilt-card">
+                    <div class="project-num mono-font">02</div>
+                    <h4 class="pixel-font">BarangayLink</h4>
+                    <p class="project-type mono-font">Government Platform</p>
+                    <p class="project-info">Linking the Digital World to the tip of your hand for faster and better barangay services.</p>
+                    <div class="project-tech"><i class="devicon-php-plain"></i> <i class="devicon-mysql-plain"></i></div>
+                </a>
+
+                <a href="https://github.com/Syntax-error2/Disasterlink" target="_blank" class="project-card tilt-card">
+                    <div class="project-num mono-font">03</div>
+                    <h4 class="pixel-font">DisasterLink</h4>
+                    <p class="project-type mono-font">Public Service App</p>
+                    <p class="project-info">Rapid calamity response platform engineered for public safety and community management.</p>
+                    <div class="project-tech"><i class="devicon-laravel-plain"></i> <i class="devicon-postgresql-plain"></i></div>
+                </a>
+
+                <a href="https://github.com/Syntax-error2/mob_rfid_2026-07-23" target="_blank" class="project-card tilt-card">
+                    <div class="project-num mono-font">04</div>
+                    <h4 class="pixel-font">Binalbagan HRIS</h4>
+                    <p class="project-type mono-font">Enterprise Solution & Biometric DTR</p>
+                    <p class="project-info">Comprehensive HR Information System with Biometric Daily Time Record capabilities.</p>
+                    <div class="project-tech"><i class="devicon-php-plain"></i> <i class="devicon-mysql-plain"></i></div>
+                </a>
+                
+                <!-- Added BWD HRIS -->
+                <a href="#" class="project-card tilt-card">
+                    <div class="project-num mono-font">05</div>
+                    <h4 class="pixel-font">BWD HRIS</h4>
+                    <p class="project-type mono-font">Enterprise Solution</p>
+                    <p class="project-info">Binalbagan Water District Human Resource Information System.</p>
+                    <div class="project-tech"><i class="devicon-php-plain"></i> <i class="devicon-mysql-plain"></i></div>
+                </a>
+                
+                <!-- Added Hinobaan HRIS -->
+                <a href="#" class="project-card tilt-card">
+                    <div class="project-num mono-font">06</div>
+                    <h4 class="pixel-font">Hinobaan HRIS</h4>
+                    <p class="project-type mono-font">Enterprise Solution</p>
+                    <p class="project-info">Tailored Human Resource Information System for the Municipality of Hinobaan.</p>
+                    <div class="project-tech"><i class="devicon-php-plain"></i> <i class="devicon-mysql-plain"></i></div>
+                </a>
+
+                <a href="https://github.com/Syntax-error2/nano-elearning" target="_blank" class="project-card tilt-card">
+                    <div class="project-num mono-font">07</div>
+                    <h4 class="pixel-font">Nano E-Learning</h4>
+                    <p class="project-type mono-font">Mobile Application</p>
+                    <p class="project-info">Mobile app tailored to support the cognitive and motor development of children with GDD.</p>
+                    <div class="project-tech"><i class="devicon-android-plain"></i> <i class="devicon-kotlin-plain"></i></div>
+                </a>
+
+                <a href="https://github.com/Syntax-error2/Leanly" target="_blank" class="project-card tilt-card">
+                    <div class="project-num mono-font">08</div>
+                    <h4 class="pixel-font">Leanly</h4>
+                    <p class="project-type mono-font">Operational System</p>
+                    <p class="project-info">"Eat Smart. Feel Light. Live Better." An operational system focused on wellness tracking.</p>
+                    <div class="project-tech"><i class="devicon-laravel-plain"></i> <i class="devicon-supabase-plain"></i></div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="education" id="education">
+            <div class="container">
+                <h3 class="section-title mono-font">/// EDUCATION</h3>
+                
+                <div class="edu-card tilt-card">
+                    <div class="edu-year mono-font">Class of 2026</div>
+                    <h4 class="pixel-font">BS in Information Technology</h4>
+                    <p class="edu-school mono-font">Carlos Hilado Memorial State College</p>
+                    <p class="edu-desc">Shaped through advanced technical skills and rigorous system architecture training. Served as Capstone Project Lead & Full-Stack Developer for the Nano Nagle E-Learning Application.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="certifications" id="certifications">
+            <div class="container">
+                <h3 class="section-title mono-font">/// PROFESSIONAL CERTIFICATIONS</h3>
+                
+                <div class="cert-grid">
+                    <div class="cert-card tilt-card">
+                        <span class="cert-badge mono-font">IBM</span>
+                        <span class="cert-name">Generative AI for Growth Marketing</span>
+                    </div>
+                    <div class="cert-card tilt-card">
+                        <span class="cert-badge mono-font">Google</span>
+                        <span class="cert-name">AI Professional Certificate</span>
+                    </div>
+                    <div class="cert-card tilt-card">
+                        <span class="cert-badge mono-font">OPSWAT</span>
+                        <span class="cert-name">Critical Infrastructure Protection</span>
+                    </div>
+                    <div class="cert-card tilt-card">
+                        <span class="cert-badge mono-font">Cyber eXercise</span>
+                        <span class="cert-name">National Cyber Defense Training</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <h2 class="footer-title pixel-font">Ready to innovate?</h2>
+                <a href="mailto:davehermoso01@gmail.com" class="footer-email mono-font">EMAIL ME</a>
+                <div class="footer-links mono-font">
+                    <a href="https://github.com/Syntax-error2" target="_blank">GitHub Profile</a>
+                    <span>//</span>
+                    <span>Binalbagan, PH</span>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,5 +1,6 @@
 window.addEventListener('load', () => {
-    // Yield to the browser's painting thread to guarantee a lightning-fast FCP/LCP
+    const loadScript = (src) => new Promise(resolve => { const s = document.createElement('script'); s.src = src; s.onload = resolve; document.body.appendChild(s); });
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js').then(() => loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js')).then(() => loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js')).then(() => {
     setTimeout(() => {
         // 1. GSAP Custom Cursor
             const cursor = document.querySelector('.cursor');
@@ -156,4 +157,5 @@ window.addEventListener('load', () => {
         });
     });
     }, 100);
+    });
 });

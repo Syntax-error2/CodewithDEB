@@ -1,8 +1,7 @@
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
     // Yield to the browser's painting thread to guarantee a lightning-fast FCP/LCP
-    requestAnimationFrame(() => {
-        setTimeout(() => {
-            // 1. GSAP Custom Cursor
+    setTimeout(() => {
+        // 1. GSAP Custom Cursor
             const cursor = document.querySelector('.cursor');
     const follower = document.querySelector('.cursor-follower');
     
@@ -156,6 +155,5 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.boxShadow = 'none';
         });
     });
-        }, 10);
-    });
+    }, 100);
 });

@@ -383,7 +383,7 @@ a { color: inherit; text-decoration: none; }
 }
 .project-num {
     font-size: 2.5rem;
-    color: var(--border);
+    color: rgba(255, 255, 255, 0.5);
     margin-bottom: auto;
     transform: translateZ(20px); 
 }

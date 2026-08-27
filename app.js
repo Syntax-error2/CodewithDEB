@@ -24,18 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. GSAP Register Plugins
     gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
-    // 3. Hero Entrance & Looping 10-Second Typewriter Animation
-    const tl = gsap.timeline();
-    
-    tl.from('.hero-img', {duration: 1, scale: 1.1, opacity: 0, ease: 'power3.out'})
-      .to('.reveal-fade', {duration: 1, y: 0, opacity: 1, stagger: 0.1, ease: 'power3.out'}, "-=0.5");
-
-    // The looping typewriter effect (every 10 seconds total cycle)
+    // 3. Hero Looping 10-Second Typewriter Animation
+    // Removed GSAP entrance animation; handled purely by CSS for instant FCP/LCP
     const typeTl = gsap.timeline({repeat: -1});
-    typeTl.to('#typewriter', {duration: 1.5, text: "John Dave Hermoso", ease: "none"}) // Type in 1.5s
-          .to({}, {duration: 7.5}) // Hold for 7.5s (9s total elapsed)
-          .to('#typewriter', {duration: 0.5, text: "", ease: "none"}) // Erase in 0.5s
-          .to({}, {duration: 0.5}); // Rest for 0.5s (10s total cycle)
+    // The text "John Dave Hermoso" is already in the HTML. Hold it for 8s.
+    typeTl.to({}, {duration: 8.5}) // Hold for 8.5s
+          .to('#typewriter', {duration: 0.5, text: "", ease: "none"}) // Erase
+          .to({}, {duration: 0.5}) // Rest
+          .to('#typewriter', {duration: 0.5, text: "John Dave Hermoso", ease: "none"}); // Type back
 
     // 4. About Text Staggered Word Reveal
     const aboutLead = document.querySelector('.about-lead');
@@ -83,35 +79,48 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 6. Horizontal Drag-to-Scroll Logic
-    const slider = document.querySelector('.horizontal-scroll-container');
+    // 6. Horizontal Drag-to-scroll functionality
+    const scrollContainer = document.querySelector('.horizontal-scroll-container');
     let isDown = false;
     let startX;
     let scrollLeft;
 
-    slider.addEventListener('mousedown', (e) => {
-        isDown = true;
-        slider.style.cursor = 'grabbing';
-        startX = e.pageX - slider.offsetLeft;
-        scrollLeft = slider.scrollLeft;
-        slider.style.scrollSnapType = 'none'; 
-    });
-    slider.addEventListener('mouseleave', () => {
-        isDown = false;
-        slider.style.cursor = 'grab';
-        slider.style.scrollSnapType = 'x mandatory';
-    });
-    slider.addEventListener('mouseup', () => {
-        isDown = false;
-        slider.style.cursor = 'grab';
-        slider.style.scrollSnapType = 'x mandatory';
-    });
-    slider.addEventListener('mousemove', (e) => {
-        if (!isDown) return;
-        e.preventDefault(); 
-        const x = e.pageX - slider.offsetLeft;
-        const walk = (x - startX) * 2.5; 
-        slider.scrollLeft = scrollLeft - walk;
+    if(scrollContainer) {
+        scrollContainer.addEventListener('mousedown', (e) => {
+            isDown = true;
+            scrollContainer.style.cursor = 'grabbing';
+            scrollContainer.style.scrollSnapType = 'none'; // Disable snap while dragging
+            startX = e.pageX - scrollContainer.offsetLeft;
+            scrollLeft = scrollContainer.scrollLeft;
+        });
+        scrollContainer.addEventListener('mouseleave', () => {
+            isDown = false;
+            scrollContainer.style.cursor = 'grab';
+            scrollContainer.style.scrollSnapType = 'x mandatory';
+        });
+        scrollContainer.addEventListener('mouseup', () => {
+            isDown = false;
+            scrollContainer.style.cursor = 'grab';
+            scrollContainer.style.scrollSnapType = 'x mandatory';
+        });
+        scrollContainer.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - scrollContainer.offsetLeft;
+            const walk = (x - startX) * 2; // Scroll speed
+            scrollContainer.scrollLeft = scrollLeft - walk;
+        });
+    }
+
+    // Email Obfuscation
+    document.querySelectorAll('.contact-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Obfuscated string concatenation to hide from bots scraping HTML
+            const p1 = "davehermoso01";
+            const p2 = "gmail.com";
+            window.location.href = "mailto:" + p1 + "@" + p2;
+        });
     });
 
     const projectCards = document.querySelectorAll('.project-card');

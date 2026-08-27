@@ -216,6 +216,21 @@ a { color: inherit; text-decoration: none; }
 .reveal-fade {
     opacity: 0; 
 }
+.hero-fade-css {
+    opacity: 0;
+    animation: heroFadeInCSS 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.hero-img {
+    animation: heroImageCSS 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+@keyframes heroFadeInCSS {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroImageCSS {
+    0% { opacity: 0; transform: scale(1.1); }
+    100% { opacity: 1; transform: scale(1); }
+}
 
 /* === About === */
 .about {

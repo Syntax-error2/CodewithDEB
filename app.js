@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. GSAP Custom Cursor
-    const cursor = document.querySelector('.cursor');
+    // Yield to the browser's painting thread to guarantee a lightning-fast FCP/LCP
+    requestAnimationFrame(() => {
+        setTimeout(() => {
+            // 1. GSAP Custom Cursor
+            const cursor = document.querySelector('.cursor');
     const follower = document.querySelector('.cursor-follower');
     
     gsap.set(cursor, {xPercent: -50, yPercent: -50});
@@ -153,5 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.boxShadow = 'none';
         });
     });
-
+        }, 10);
+    });
 });

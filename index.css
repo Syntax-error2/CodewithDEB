@@ -155,8 +155,8 @@ a { color: inherit; text-decoration: none; }
     width: 100%;
 }
 .hero-image-box {
-    width: 160px;
-    height: 160px;
+    width: 180px;
+    height: 220px;
     overflow: hidden;
     border-radius: 12px;
     flex-shrink: 0;
@@ -168,7 +168,9 @@ a { color: inherit; text-decoration: none; }
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top center;
     filter: grayscale(100%);
+    animation: heroImageCSS 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 .hero-text {
     flex-grow: 1;
@@ -531,5 +533,11 @@ a { color: inherit; text-decoration: none; }
     .blob {
         filter: blur(40px); /* Massive performance gain for mobile GPUs */
         animation: none; /* Disable heavy background animation on mobile */
+    }
+    .navbar {
+        padding: 1.5rem;
+    }
+    .nav-item:not(.cta-btn) {
+        display: none;
     }
 }

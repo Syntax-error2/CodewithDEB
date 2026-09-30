@@ -730,3 +730,6 @@ a { color: inherit; text-decoration: none; }
     box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
 }
 
+
+.js-enabled .exp-block, .js-enabled .edu-card, .js-enabled .cert-card { opacity: 0; transform: translateY(30px); }
+

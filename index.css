@@ -273,6 +273,11 @@ a { color: inherit; text-decoration: none; }
 }
 .stack-item i {
     font-size: 1.5rem;
+    filter: grayscale(100%) opacity(0.7);
+    transition: filter 0.3s ease;
+}
+.stack-item:hover i {
+    filter: grayscale(0%) opacity(1);
 }
 
 @keyframes scrollMarquee {
@@ -428,20 +433,18 @@ a { color: inherit; text-decoration: none; }
     display: flex;
     gap: 1.5rem;
     font-size: 2.5rem;
-    color: rgba(255,255,255,0.4);
     transform: translateZ(25px);
-    transition: color 0.3s ease;
-}
-.project-card:hover .project-tech {
-    color: rgba(255,255,255,0.8);
 }
 .project-tech i {
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease, filter 0.3s ease;
+    filter: grayscale(100%) opacity(0.4);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.project-card:hover .project-tech i {
+    filter: grayscale(0%) opacity(1);
 }
 .project-tech i:hover {
     transform: scale(1.3) translateY(-5px);
-    color: #fff;
-    filter: drop-shadow(0 0 12px rgba(255,255,255,0.6));
+    filter: grayscale(0%) opacity(1) drop-shadow(0 10px 15px rgba(255,255,255,0.2)) !important;
 }
 
 /* === Education Section === */

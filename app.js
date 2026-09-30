@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const loadCSS = (src) => { const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = src; document.head.appendChild(l); };
-    loadCSS('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css');
+    
+    
 
     // 1. GSAP Custom Cursor
     const cursor = document.querySelector('.cursor');
@@ -107,3 +107,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+

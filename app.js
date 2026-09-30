@@ -29,14 +29,6 @@ window.addEventListener('load', () => {
     // 2. GSAP Register Plugins
     gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
-    // 3. Hero Looping 10-Second Typewriter Animation
-    // Removed GSAP entrance animation; handled purely by CSS for instant FCP/LCP
-    const typeTl = gsap.timeline({repeat: -1});
-    // The text "John Dave Hermoso" is already in the HTML. Hold it for 8s.
-    typeTl.to({}, {duration: 8.5}) // Hold for 8.5s
-          .to('#typewriter', {duration: 0.5, text: "", ease: "none"}) // Erase
-          .to({}, {duration: 0.5}) // Rest
-          .to('#typewriter', {duration: 0.5, text: "John Dave Hermoso", ease: "none"}); // Type back
 
     // 4. About Text Staggered Word Reveal
     const aboutLead = document.querySelector('.about-lead');

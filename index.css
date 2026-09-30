@@ -222,6 +222,16 @@ a { color: inherit; text-decoration: none; }
     color: var(--ink-muted);
     max-width: 900px;
 }
+.highlight-text {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+    font-weight: bold;
+    display: inline-block;
+    transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+.highlight-text:hover {
+    text-shadow: 0 0 20px rgba(255,255,255,0.8);
+}
 
 /* === Section Titles === */
 .section-title {

@@ -162,20 +162,39 @@ a { color: inherit; text-decoration: none; }
     width: 100%;
 }
 .hero-image-box {
-    width: 180px;
-    height: 220px;
-    overflow: hidden;
-    border-radius: 12px;
+    position: relative;
+    width: 220px;
+    height: 260px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
     flex-shrink: 0;
-    border: 1px solid var(--border);
-    background: var(--surface);
-    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: all 0.5s ease;
+}
+.hero-image-box::before {
+    content: '';
+    position: absolute;
+    top: -15%; left: -15%; right: -15%; bottom: -15%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+    z-index: -1;
+    filter: blur(20px);
+    border-radius: 50%;
+    animation: pulseGlow 4s infinite alternate;
+}
+@keyframes pulseGlow {
+    0% { transform: scale(0.9); opacity: 0.5; }
+    100% { transform: scale(1.1); opacity: 0.9; }
 }
 .hero-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: top center;
+    border-radius: 16px;
 }
 .hero-text {
     flex-grow: 1;
@@ -188,9 +207,17 @@ a { color: inherit; text-decoration: none; }
 }
 .hero-title {
     font-size: clamp(2rem, 4vw, 3.5rem);
-    line-height: 1;
+    line-height: 1.1;
     margin-bottom: 0.5rem;
-    min-height: 3.5rem; 
+    min-height: 3.5rem;
+    background: linear-gradient(to right, #fff, var(--ink-muted), #fff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 4s linear infinite;
+}
+@keyframes shine {
+    to { background-position: 200% center; }
 }
 .cursor-blink {
     display: inline-block;
@@ -565,3 +592,35 @@ a { color: inherit; text-decoration: none; }
         display: none;
     }
 }
+
+/* === Social Icons === */
+.hero-socials {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+.social-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.social-icon svg {
+    width: 22px;
+    height: 22px;
+}
+.social-icon:hover {
+    background: var(--ink);
+    color: var(--bg);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+}
+
